@@ -23,6 +23,7 @@ Note: `--volume` needs to be adjusted accordingly.
 
 ## Sample configuration
 Mapped to `/data/config.yml`
+
 ```
 storage:
   input:
@@ -43,6 +44,7 @@ parameters:
 
 ### Input
 Read from `/data/source.csv`
+
 ```
 id,text
 1,"He won gold and silver medals at the past two Olympic Games, and even has an aquatic arena named after him."
@@ -52,6 +54,7 @@ id,text
 
 ### Output
 Written to `/data/topic.csv`
+
 ```
 id,topic,confidence
 1,Sports,0.467843459155
