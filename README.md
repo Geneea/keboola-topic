@@ -43,7 +43,7 @@ parameters:
 ## Sample data
 
 ### Input
-Read from `/data/source.csv`
+Read from `/data/in/tables/source.csv`
 
 ```
 id,text
@@ -53,7 +53,7 @@ id,text
 ```
 
 ### Output
-Written to `/data/topic.csv`
+Written to `/data/out/tables/topic.csv`
 
 ```
 id,topic,confidence

@@ -12,8 +12,8 @@ URL = 'https://api.geneea.com/s1/topic'
 
 def main(args):
     config = yaml.load(open(args.dataDir + '/config.yml', 'r'))
-    input_file = open(args.dataDir + '/' + config['storage']['input']['tables'][0]['source'], 'rb')
-    output_file = open(args.dataDir + '/' + config['storage']['output']['tables'][0]['source'], 'wb')
+    input_file = open(args.dataDir + '/in/tables/' + config['storage']['input']['tables'][0]['source'], 'rb')
+    output_file = open(args.dataDir + '/out/tables/' + config['storage']['output']['tables'][0]['source'], 'wb')
 
     headers = {
         'Content-Type': 'application/json',
