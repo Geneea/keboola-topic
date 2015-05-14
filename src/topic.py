@@ -7,10 +7,15 @@ import csv
 import requests
 import yaml
 
-
 URL = 'https://api.geneea.com/s1/topic'
 
 def main(args):
+    try:
+        from requests.packages import urllib3
+        urllib3.disable_warnings()
+    except ImportError:
+        pass
+
     config = yaml.load(open(args.dataDir + '/config.yml', 'r'))
     input_file = open(args.dataDir + '/in/tables/' + config['storage']['input']['tables'][0]['source'], 'rb')
     output_file = open(args.dataDir + '/out/tables/' + config['storage']['output']['tables'][0]['source'], 'wb')
