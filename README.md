@@ -1,17 +1,11 @@
-# Geneea topic detection API demo
+# Geneea topic detection API
 
-A simple example of using topic detection with Geneea API which can be integrated with Keboola.
-It's implemented as a Docker container with a python script calling the Geneea API.
+A Docker container used for running the topic detection API.
 
-## Building a container
-
-```
-git clone https://github.com/Geneea/keboola-topic.git
-cd keboola-topic
-sudo docker build --no-cache -t geneea/keboola-topic .
-```
+This is an example of integration of [Geneea API](https://api.geneea.com) with [Keboola Connection](https://connection.keboola.com)
 
 ## Running a container
+This container can be run from the Registry using:
 
 ```
 sudo docker run \
@@ -20,6 +14,15 @@ sudo docker run \
 geneea/keboola-topic:latest
 ```
 Note: `--volume` needs to be adjusted accordingly.
+
+## Building a container
+To build this container manually one can use:
+
+```
+git clone https://github.com/Geneea/keboola-topic.git
+cd keboola-topic
+sudo docker build --no-cache -t geneea/keboola-topic .
+```
 
 ## Sample configuration
 Mapped to `/data/config.yml`
@@ -35,9 +38,11 @@ storage:
       0:
         source: topic.csv
 parameters:
-  primary_key_column: id
+  user_key: <ENTER API KEY HERE>
+  customer_id: <ENTER CUSTOMER ID HERE>
+  id_column: id
   data_column: text
-  user_key: <ENTER YOUR API KEY HERE>
+  language: en # OPTIONAL
 ```
 
 ## Sample data

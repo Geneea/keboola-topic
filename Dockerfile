@@ -1,4 +1,4 @@
-# VERSION 1.0.2
+# VERSION 1.1.0
 
 FROM keboola/base
 MAINTAINER Tomáš Mudruňka <mudrunka@geneea.com>
@@ -13,6 +13,6 @@ RUN pip install PyYaml
 
 # prepare the container
 WORKDIR /home
-RUN git clone https://github.com/Geneea/keboola-topic.git ./
+COPY src src/
 
 ENTRYPOINT python ./src/topic.py --data=/data
